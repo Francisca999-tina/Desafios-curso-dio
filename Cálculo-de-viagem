@@ -18,3 +18,24 @@ Exemplo de Entrada	Exemplo de Saída
 # -----------------------------------------------------------
 
 
+using System;
+
+namespace DesafioOne
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        string[] entradas = Console.ReadLine().Split();
+        int tempoDeViagem = Int32.Parse(entradas[0]);
+        int velocidadeMedia = Int32.Parse(entradas[1]);
+
+        double consumoMedio = 12;
+        double distanciaPercorrida = (tempoDeViagem * velocidadeMedia);
+        double quantidadeDeLitros = distanciaPercorrida / consumoMedio;
+
+        Console.WriteLine(quantidadeDeLitros.ToString("N3"));
+
+        }
+    }
+}
