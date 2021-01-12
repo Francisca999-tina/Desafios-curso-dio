@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+
+namespace csharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<String, List<String>> dicionarioJogo = new Dictionary<string, List<string>>();
+            dicionarioJogo.Add("tesoura", new List<string>() { "papel", "lagarto" });
+            dicionarioJogo.Add("papel", new List<string>() { "pedra", "spock" });
+            dicionarioJogo.Add("pedra", new List<string>() { "lagarto", "tesoura" });
+            dicionarioJogo.Add("lagarto", new List<string>() { "spock", "papel" });
+            dicionarioJogo.Add("spock", new List<string>() { "tesoura", "pedra" });
+
+            int numeroJogadas = Int32.Parse(Console.ReadLine());
+
+            for(int index=0; index < numeroJogadas; index++)
+            {
+                String[] entrada = Console.ReadLine().Split(" ");
+                String sheldon = entrada[0].ToLower();
+                String raj = entrada[1].ToLower();
+
+                if(sheldon.Equals(raj))
+                {
+                    Console.WriteLine("Caso #" + (index + 1) + ": De novo!");
+                } else
+                {
+                    List<String> opcaoVitoriaSheldon = dicionarioJogo[sheldon];
+
+                    Boolean sheldonGanhou = false;
+                    foreach(String vitoria in opcaoVitoriaSheldon)
+                    {
+                        if(raj.Equals(vitoria))
+                        {
+                            sheldonGanhou = true;
+                            break;
+                        }
+                    }
+
+                    if(sheldonGanhou)
+                    {
+                        Console.WriteLine("Caso #" + (index + 1) + ": Bazinga!");
+                    } else
+                    {
+                        Console.WriteLine("Caso #" + (index + 1) + ": Raj trapaceou!");
+                    }
+                }
+
+            }
+
+        }
+    }
+}
