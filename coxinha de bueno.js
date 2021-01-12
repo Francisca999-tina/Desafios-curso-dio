@@ -1,8 +1,20 @@
-let x = gets().split(" ")
+using System;
 
-let h = parseFloat(x[0]);
-let p = parseFloat(x[1]);
+namespace csharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
 
-let total = parseFloat(h/p).toFixed(2);
-
-console.log(total);
+            String[] line = Console.ReadLine().Split(" ");
+            float A = Int32.Parse(line[0]);
+            float B = Int32.Parse(line[1]);
+            float total = (A / B);
+            if (A % B != 0)
+                Console.WriteLine(Math.Round(total, 2).ToString("0.00"));
+            else
+                Console.WriteLine(total.ToString("0.00"));
+        }
+    }
+}
