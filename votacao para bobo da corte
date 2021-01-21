@@ -1,0 +1,19 @@
+let n = parseInt(gets());
+let array = [];
+let votos = 0;
+let maior = "";
+
+for (let i = 0; i < n; i++) {
+  votos = parseInt(gets());
+  array.push(votos);
+}
+
+for (let i = 0; i < array.length; i++) {
+  if(array[0] >= array[i]) {
+    maior = "S"
+  } else {
+    maior = "N"
+  }
+}
+
+console.log(maior)
