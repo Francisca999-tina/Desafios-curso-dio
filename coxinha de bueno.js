@@ -18,3 +18,7 @@ namespace csharp
         }
     }
 }
+
+
+//resolução 2
+console.log(gets().split(" ").reduce((acc,cur) => acc/cur).toFixed(2))
