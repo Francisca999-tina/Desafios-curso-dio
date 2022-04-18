@@ -1,0 +1,12 @@
+
+var participantes = gets();
+var criancas;
+var array = [];
+for(i=0; i <= participantes; i++ ){
+ criancas = gets().split(' ');
+ array.push(criancas);
+}
+
+const meninos = array.filter(str => str.slice(-1) == 'M').length;
+const meninas = array.filter(str => str.slice(-1) == 'F').length;
+print(`${meninos} carrinhos\n${meninas} bonecas`);
