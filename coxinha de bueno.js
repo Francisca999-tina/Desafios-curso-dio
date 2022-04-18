@@ -22,3 +22,12 @@ namespace csharp
 
 //resolução 2
 console.log(gets().split(" ").reduce((acc,cur) => acc/cur).toFixed(2))
+
+//resolução 3
+let line = gets().split(" ");
+
+let h = parseFloat(line[0]);
+
+let p = parseFloat(line[1]);
+
+console.log((h/p).toFixed(2));
